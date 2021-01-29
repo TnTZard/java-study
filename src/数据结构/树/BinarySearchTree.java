@@ -109,8 +109,33 @@ public class BinarySearchTree {
         boolean isLeftChild = false;
 
         while (deleteNode.key != key) {
-
+            parentNode = deleteNode;
+            if (key < deleteNode.key) {
+                isLeftChild = true;
+                deleteNode = deleteNode.leftChild;
+            } else {
+                isLeftChild = false;
+                deleteNode = deleteNode.rightChild;
+            }
+            // 如果目标key对应的节点为空，则不需要删除，直接返回false
+            if (deleteNode == null) {
+                return false;
+            }
         }
+
+        // 情况1：被删除的节点是叶子节点
+        if (deleteNode.leftChild == null && deleteNode.rightChild == null) {
+            if (deleteNode == null) {
+                root = null;
+            } else if (isLeftChild) {
+                // 如果要删除的叶子节点为父节点的左子节点，则将父节点的左子节点关联置为null
+                parentNode.leftChild = null;
+            } else {
+                parentNode.rightChild = null;
+            }
+        }
+
+        return true;
     }
 
 

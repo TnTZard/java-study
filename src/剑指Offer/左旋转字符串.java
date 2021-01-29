@@ -5,6 +5,9 @@ package 剑指Offer;
  * @Date: 2020/11/27 18:26
  */
 public class 左旋转字符串 {
+    public static void main(String[] args) {
+
+    }
 
     public String reverseLeftWords(String s, int n) {
         StringBuilder stringBuilder = new StringBuilder(s);
