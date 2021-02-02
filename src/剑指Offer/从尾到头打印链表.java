@@ -1,5 +1,7 @@
 package 剑指Offer;
 
+import LeetCode1.ListNode;
+
 import java.util.Stack;
 
 /**
@@ -36,10 +38,5 @@ public class 从尾到头打印链表 {
 
 
 
-    class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x;}
-    }
 
 }
