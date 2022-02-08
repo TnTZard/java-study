@@ -1,7 +1,11 @@
 package 常用常查;
 
+import 常用常查.枚举.Ensemble;
+
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 /**
@@ -10,6 +14,19 @@ import java.util.stream.Collectors;
  */
 public class 数组和列表 {
     public static void main(String[] args) {
+
+
+        String a = "/user-manage-server/enum/listEnum";
+        String[] arr = a.split("/");
+        System.out.println(arr[0]);
+//
+//        List<Integer> test = Arrays.asList(1, 3, 4, 5, 7, 8);
+//        test = test.stream().filter(item -> item % 2 == 0).collect(Collectors.toList());
+//        test.forEach(System.out::print);
+
+
+//        int n = Ensemble.SOLID.number();
+//        System.out.println(n);
         int[] data = {4, 5, 3, 6, 2, 5, 1};
 
         // int[] 转 List<Integer>
@@ -36,7 +53,7 @@ public class 数组和列表 {
         // 想要转换成int[]类型，就得先转成IntStream。
         // 这里就通过mapToInt()把Stream<Integer>调用Integer::valueOf来转成IntStream
         // 而IntStream中默认toArray()转成int[]。
-
+    
         // Integer[] 转 int[]
         int[] arr2 = Arrays.stream(integers1).mapToInt(Integer::valueOf).toArray();
         // 思路同上。先将Integer[]转成Stream<Integer>，再转成IntStream。
@@ -51,6 +68,8 @@ public class 数组和列表 {
         List<String> list3 = Arrays.asList(strings1);
         // List<String> 转 String[]
         String[] strings2 = list3.toArray(new String[0]);
+
+        Stack<Integer> stack = new Stack<>();
 
     }
 

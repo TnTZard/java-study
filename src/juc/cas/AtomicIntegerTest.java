@@ -1,6 +1,7 @@
 package juc.cas;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 import java.util.stream.IntStream;
 
 /**
@@ -25,8 +26,6 @@ public class AtomicIntegerTest {
         thread1.join();
         thread2.join();
         System.out.println(value);
-
-
     }
 
 
